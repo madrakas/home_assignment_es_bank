@@ -1,0 +1,215 @@
+body, body * {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    min-height: 100vh;
+    background-color: rgb(196, 221, 243);
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: 36px;
+}
+
+p{
+    width: 100%;
+    text-align: lef;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100;
+    height: 4rem;
+    border: none;
+    background-color: rgb(100, 100, 100);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+}
+
+header .logo, footer .logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    height: 100%;
+    padding-left: 6rem;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* content */
+content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2rem 4rem;
+    padding: 2rem;
+    width: calc(100% -8rem);
+    min-height: calc(100vh - 12rem);
+    background-color: white;
+    border-radius: 5px;
+}
+
+
+/* footer */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100;
+    height: 4rem;
+    border: none;
+    background-color: rgb(100, 100, 100);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+  }
+
+
+/* Forms */
+
+form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    
+}
+
+input {
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+option, select {
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color: white;
+}
+
+label {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+button
+ {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    border-radius: 5px;
+    margin: 1rem 0;
+    cursor: pointer;
+
+ }
+
+ /* Report style */
+ 
+.report-section{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    font-size: 2rem;
+    font-style: italic;
+    background-color: rgb(255, 248, 203);
+    border-bottom: 6px solid rgb(182, 157, 0);;
+}
+
+/* Transactions details view */
+
+.details-head{
+    display: flex;
+    width: calc(100% - 6rem);
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1rem;
+    margin-left: 6rem;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: white;
+    background-color: rgb(96, 144, 41);
+}
+
+.detail-headings, .detail-row{
+    display: flex;
+    width: calc(100% - 12rem);
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 1rem;
+    margin-left: 12rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-style: italic;
+    gap: 1rem;
+    background-color: rgb(173, 211, 129);
+}
+
+.detail-row{
+    font-size: 1.2rem;
+    font-weight: 100;
+    background-color: rgb(231, 255, 203);
+    border-bottom: 2px dotted rgb(47, 88, 0);
+    
+}
+
+.date{
+    width: 11rem;
+}
+
+.id{
+    width: 12rem;
+}
+
+.client{
+    width: 10rem;
+}
+
+.operation-type{
+    width: 7rem;
+}
+
+.operation-ammount{
+    width: 6rem;
+}
+
+
+.curency{
+    border-right: 2px dotted rgb(47, 88, 0);
+}
