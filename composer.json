@@ -1,0 +1,17 @@
+{
+    "name": "arvydas/easyseo",
+    "description": "Easy SEO assignment",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ars/bank": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Arvydas Šimbelis",
+            "email": "arvydas.simbelis@gmail.com"
+        }
+    ],
+    "require": {}
+}
