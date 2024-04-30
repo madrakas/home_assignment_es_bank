@@ -3,6 +3,7 @@
 namespace Bank\App;
 
 use Bank\App\Controllers\HomeController;
+use Bank\App\Controllers\TransactionController;
 
 class App
 {
@@ -22,6 +23,8 @@ class App
         if ('GET' == $method && count($url) == 1 && $url[0] == '') {
             
             return (new HomeController())->index();
+        }elseif('POST' == $method && count($url) == 1 && $url[0] == 'upload'){
+            return (new TransactionController())->upload($_FILES);
         }
 
         return "<h1>404</h1><br>";
