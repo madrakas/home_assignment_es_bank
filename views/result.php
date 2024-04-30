@@ -5,5 +5,3 @@
 echo "<pre>" . str_replace(' ', '&nbsp;', print_r($data['input_data'], true)) . "</pre>";
 ?>
 
-
-</form>
