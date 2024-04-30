@@ -1,8 +1,9 @@
 <?php
-namespace App\DB;
+namespace Bank\APP\DB;
 
 interface DataBase
 {
+
     function create(object $userData) : int;
     
     function update(int $userId, object $userData) : bool;

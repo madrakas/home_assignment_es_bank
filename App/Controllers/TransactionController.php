@@ -2,6 +2,8 @@
 namespace Bank\App\Controllers;
 
 use Bank\App\App;
+use Bank\App\Controllers\CurrencyController;
+use Bank\App\DB\FileBase;
 
 class TransactionController
 {
@@ -25,7 +27,12 @@ class TransactionController
                 } else {
                     $input_data = [];
                 }
-                return App::view('result', ['input_data' => $input_data]);
+                $output_data = $this->getTaxes($input_data);
+                
+                return App::view('result', [
+                    'input_data' => $input_data,
+                    'output_data' => $output_data
+                ]);
             } else {
                 return App::view('result', ['input_data' => $data['file']['error']]);
             }
@@ -55,5 +62,44 @@ class TransactionController
         }
         return $result;
     }
-    
+
+    private function getTaxes(array $data) : array
+    {
+        $taxes = [];
+
+        foreach($data as $row){
+            // case operation type = "in"
+            if($row['operationType'] == "in"){
+                $taxes[] = $this->inTax($row['amount'], $row['currency']);
+            }else if($row['operationType'] == "out"){
+                $taxes[] = $row['amount'] * 0;
+            }
+        }
+        return $taxes;
+    }
+
+    private function inTax($amount, $currency) {
+        $tax = ($amount * 0.05) > 5 ? 5 : ($amount * 0.05);
+        return $this->roundToMinValue($tax, $currency);        
+    }
+
+    private function roundToMinValue($amount, $currency) {
+        //Find currency min value
+        $reader = new FileBase('currencies');
+        $currencies = $reader->showAll();
+        $cur = array_filter($currencies, fn ($item) => $item['name'] == $currency);
+        var_dump($cur);
+        
+
+        $minValue = $cur['minValue'];
+
+        // Round to min value
+        if (($amount / $minValue) % 1 != 0) {
+            $amount = round($tax / $minValue) * $minValue + $minValue;
+        } else {
+            $amount = round($tax / $minValue) * $minValue;
+        }
+        
+        return $amount;
+    }
 }

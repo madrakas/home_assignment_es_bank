@@ -1,8 +1,8 @@
 <?php
 
-namespace Bank\DB;
+namespace Bank\App\DB;
 
-use Bank\DB\DataBase;
+use Bank\App\DB\DataBase;
 
 class FileBase implements DataBase
 {
@@ -76,7 +76,12 @@ class FileBase implements DataBase
     public function showAll() : array
     {
         $this->save = false;
-        return $this->data;
+        $this->data = array_values($this->data);
+        
+        $result = [];
+        foreach ($this->data as $key => $value) {
+            $result[] = (array)$value;
+        }
+        return $result;
     }
-
 }
