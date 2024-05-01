@@ -248,10 +248,16 @@ class TransactionController
     }
 
     private function sameWeek($date1, $date2) {
-        $date1 = new \DateTime($date1);
-        $date2 = new \DateTime($date2);
-        $diff = $date1->diff($date2);
-        return $diff->days < 7;
+        $td1 = new \DateTime($date1);
+        $td2 = new \DateTime($date2);
+
+        $week1 = $td1->format('W');
+        $week2 = $td2->format('W');
+
+        $year1 = $td1->format('o');
+        $year2 = $td2->format('o');
+
+        return $week1 == $week2 && $year1 == $year2;
     }
 
 }
