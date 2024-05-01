@@ -8,13 +8,13 @@ $rates = [
         'id' => 1,
         'name' => 'EUR',
         'rate' => 1,
-        'minValue' => 0,01,
+        'minValue' => 0.01,
     ],
     (object)[
         'id' => 2,
         'name' => 'USD',
         'rate' => 1.1497,
-        'minValue' => 001,
+        'minValue' => 0.01,
     ],
     (object)[
         'id' => 3,

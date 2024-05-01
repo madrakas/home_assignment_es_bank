@@ -1,1 +1,1 @@
-[{"id":1,"name":"EUR","rate":1,"minValue":0,"0":1},{"id":2,"name":"USD","rate":1.1497,"minValue":0,"0":1},{"id":3,"name":"JPY","rate":129.53,"minValue":1}]
+[{"id":1,"name":"EUR","rate":1,"minValue":0.01},{"id":2,"name":"USD","rate":1.1497,"minValue":0.01},{"id":3,"name":"JPY","rate":129.53,"minValue":1}]
