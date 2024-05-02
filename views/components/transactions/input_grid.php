@@ -1,7 +1,3 @@
-
-
-
-<!-- Data 	ID 	Kliento tipas 	Operacijos tipas 	Operacijos suma 	Operacijos valiuta -->
 <div class ="report-section">
     <h2>Input data:</h2>
 </div>
