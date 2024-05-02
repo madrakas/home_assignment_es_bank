@@ -6,13 +6,15 @@
         <div class="tax">Tax</div>
 </div>
 
-<?php 
-    $output = $data['output_data'];
-    foreach ($output as $tax) {
-        echo '<div class="detail-row">';
-            echo '<div class="tax">' . $tax . '</div>';
-        echo '</div>';
-    }
-?>
+<div class="detail" id="taxTable">
+    <?php 
+        $output = $data['output_data'];
+        foreach ($output as $tax) {
+            echo '<div class="detail-row">';
+                echo '<div class="tax">' . $tax . '</div>';
+            echo '</div>';
+        }
+    ?>
+</div>
 
-<button>Download txt</button>
+<button type="button" id="downloadButton">Download txt</button>

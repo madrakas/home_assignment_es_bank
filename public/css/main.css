@@ -167,6 +167,12 @@ button
     background-color: rgb(96, 144, 41);
 }
 
+.detail{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
 .detail-headings, .detail-row{
     display: flex;
     width: calc(100% - 12rem);
