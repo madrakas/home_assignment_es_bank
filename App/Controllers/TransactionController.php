@@ -254,7 +254,7 @@ class TransactionController
             if (count($row) != 6) {
                 return [
                     'valid' => false,
-                    'message' => 'Blogas stulpelių skaičius eilutėje ' . ($key + 1)
+                    'message' => 'Blogas stulpelių skaičius eilutėje ' . ($i)
                 ];
             };
 
@@ -262,11 +262,10 @@ class TransactionController
                switch ($key) {
                     case 0:
                         // validate date
-                        $date = new \DateTime($value);
-                        if (!$date) {
+                        if (!$this->isValidDate($value, 'Y-m-d')) {
                             return [
                                 'valid' => false,
-                                'message' => 'Blogas datos formatas eilutėje ' . ($key + 1)
+                                'message' => 'Blogas datos formatas eilutėje ' . ($i)
                             ];
                         }
                         break;
@@ -275,7 +274,7 @@ class TransactionController
                         if (!is_numeric($value)) {
                             return [
                                 'valid' => false,
-                                'message' => 'Blogas kliento ID eilutėje ' . ($key + 1)
+                                'message' => 'Blogas kliento ID eilutėje ' . ($i)
                             ];
                         }
                         break;
@@ -284,7 +283,7 @@ class TransactionController
                         if (!in_array($value, ['simple', 'legal'])) {
                             return [
                                 'valid' => false,
-                                'message' => 'Blogas klilento tipas eilutėje ' . ($key + 1)
+                                'message' => 'Blogas klilento tipas eilutėje ' . ($i)
                             ];
                         }
                         break;
@@ -293,7 +292,7 @@ class TransactionController
                         if (!in_array($value, ['in', 'out'])) {
                             return [
                                 'valid' => false,
-                                'message' => 'Blogas operacijos tipas eilutėje ' . ($key + 1)
+                                'message' => 'Blogas operacijos tipas eilutėje ' . ($i)
                             ];
                         }
                         break;
@@ -311,7 +310,7 @@ class TransactionController
                         if (!in_array($value, $currencies)) {
                             return [
                                 'valid' => false,
-                                'message' => 'Bloga valiuta eilutėje ' . ($key + 1)
+                                'message' => 'Bloga valiuta eilutėje ' . ($i)
                             ];
                         }
                         break;
@@ -391,4 +390,11 @@ class TransactionController
         return $week1 == $week2 && $year1 == $year2;
     }
 
+    function isValidDate($date, $format = 'Y-m-d') {
+        $d = \DateTime::createFromFormat($format, $date);
+        // check for errors and warnings
+        $errors = \DateTime::getLastErrors();
+        return $d && !$errors;
+    }
+    
 }
