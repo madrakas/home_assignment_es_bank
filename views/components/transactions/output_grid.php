@@ -1,9 +1,9 @@
 <div class ="report-section">
-    <h2>Output data:</h2>
+    <h2>Suskaičiuoti mokesčiai:</h2>
 </div>
 
 <div class="detail-headings">
-        <div class="tax">Tax</div>
+        <div class="tax">Mokestis</div>
 </div>
 
 <div class="detail" id="taxTable">
@@ -17,4 +17,4 @@
     ?>
 </div>
 
-<button type="button" id="downloadButton">Download txt</button>
+<button type="button" id="downloadButton">Atsisiųsti txt</button>

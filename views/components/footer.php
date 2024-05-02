@@ -1,7 +1,7 @@
 </content>
     <footer class="footer">
         <div class="logo">
-            <a href="">Easy SEO Bank</a>
+            <a href="">EASYSEO Bank</a>
         </div>
     </footer>
     <!-- JS module import -->

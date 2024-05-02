@@ -1,5 +1,5 @@
 <div class ="report-section">
-    <h2>Input data:</h2>
+    <h2>Pateikti operacijų duomenys:</h2>
 </div>
 
     <div class="detail-headings">

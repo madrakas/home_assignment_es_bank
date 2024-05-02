@@ -1,5 +1,4 @@
 <?php
-
 namespace Bank\App;
 
 use Bank\App\Controllers\HomeController;
@@ -8,7 +7,7 @@ use Bank\App\Controllers\TransactionController;
 class App
 {
 
-    public static function run()
+    public static function run() : string
     {
         $server = $_SERVER['REQUEST_URI'];
         $url = explode('/', $server);
@@ -16,12 +15,11 @@ class App
         return self::router($url);
     }
 
-    private static function router($url)
+    private static function router(array $url) : string
     {
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ('GET' == $method && count($url) == 1 && $url[0] == '') {
-            
             return (new HomeController())->index();
         }elseif('POST' == $method && count($url) == 1 && $url[0] == 'upload'){
             return (new TransactionController())->upload($_FILES);
@@ -30,7 +28,7 @@ class App
         return "<h1>404</h1><br>";
     }
 
-    public static function view($view, $data = [])
+    public static function view(string $view, array $data = []) : string
     {
         extract($data);
         ob_start();
