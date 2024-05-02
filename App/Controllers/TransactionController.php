@@ -89,7 +89,7 @@ class TransactionController
                     $simpleOutTransactionNavigator[$row['customerId']] = 0;
                 }
                 
-                var_dump($customerTransactions[$simpleOutTransactionNavigator[$row['customerId']]]);
+                // var_dump($customerTransactions[$simpleOutTransactionNavigator[$row['customerId']]]);
 
                 $currentTransaction = $customerTransactions[$simpleOutTransactionNavigator[$row['customerId']]];
                 $simpleOutTransactionNavigator[$row['customerId']] += 1;

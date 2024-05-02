@@ -58,7 +58,6 @@ header a {
 }
 
 
-
 /* content */
 content{
     display: flex;
@@ -132,6 +131,7 @@ button
     border-radius: 5px;
     margin: 1rem 0;
     cursor: pointer;
+    min-width: 30rem;
 
  }
 
@@ -143,7 +143,7 @@ button
     align-items: flex-start;
     flex-direction: row;
     gap: 2rem;
-    padding: 1rem;
+    padding: 1rem ;
     margin: 0.5rem 0;
     font-size: 2rem;
     font-style: italic;
@@ -190,26 +190,26 @@ button
 }
 
 .date{
-    width: 11rem;
+    width: 8rem;
 }
 
-.id{
-    width: 12rem;
+.cutomerID{
+    width: 2rem;
 }
 
-.client{
-    width: 10rem;
-}
-
-.operation-type{
-    width: 7rem;
-}
-
-.operation-ammount{
+.customerType{
     width: 6rem;
 }
 
+.trasactionAmount{
+    width: 9rem;
+}
 
-.curency{
+.tax{
+    width: 5rem;
+}
+
+.curency {
     border-right: 2px dotted rgb(47, 88, 0);
 }
+
