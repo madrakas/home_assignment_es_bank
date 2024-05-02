@@ -1,9 +1,9 @@
 <h1>Results</h1>
 
 <form method="post" enctype="multipart/form-data" action="/upload">
-  <label for="file">Log file</label>
+  <label for="file">Ataskaitos failas</label>
   <input id="file" name="file" type="file" accept=".txt"/>
-  <button type="submit">Upload</button>
+  <button type="submit">Įkelti</button>
 </form>
  
 <?php
@@ -21,6 +21,5 @@
     if (isset($data['output_data']) && is_array($data['input_data'])) {
         // include output grid view
         require_once __DIR__ . '/components/transactions/output_grid.php';
-    } 
+    }
 ?>
-
