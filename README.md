@@ -81,6 +81,11 @@ Would like to run this project locally? Open terminal and follow these steps:
 7. Open your URL (default http://easyseo.bit) to view folders in your browser.
 
 8. You can add more currencies to /data/currencies.json
+
+9. To reset default currencies data, run seeder:
+```
+php ./seeder/s
+```
    
 ### 🧪 Running tests
 
